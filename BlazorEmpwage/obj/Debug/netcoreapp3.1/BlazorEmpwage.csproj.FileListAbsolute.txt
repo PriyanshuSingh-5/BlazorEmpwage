@@ -52,3 +52,5 @@ C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\obj\Debug\netcor
 C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\obj\Debug\netcoreapp3.1\BlazorEmpwage.csproj.CopyComplete
 C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\EmpApp.razor.g.cs
 C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\obj\Debug\netcoreapp3.1\Razor\Pages\EmpApp.razor.g.cs
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\EmpHome.razor.g.cs
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\obj\Debug\netcoreapp3.1\Razor\Pages\EmpHome.razor.g.cs
