@@ -12,35 +12,35 @@ namespace BlazorEmpwage
         // string connectionString = "Put Your Connection string here";
         string connectionString = "Data Source=LAPTOP-NAVJ6800\\SQLEXPRESS;Initial Catalog=Blazor;Integrated Security=True;";
         //To View all Customers details    
-        public IEnumerable<Employee> GetAllCustomers()
+        public IEnumerable<Employee> GetAllEmployee()
         {
             List<Employee> lstCustomer = new List<Employee>();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("usp_GetAllCustomers", con);
+                SqlCommand cmd = new SqlCommand("spGetAllEmployee", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Employee Customer = new Employee();
-                    Customer.CustomerId = Convert.ToInt32(rdr["CustomerID"]);
-                    Customer.Name = rdr["Name"].ToString();
-                    Customer.Gender = rdr["Gender"].ToString();
+                    Employee Emp = new Employee();
+                    Emp.CustomerId = Convert.ToInt32(rdr["CustomerID"]);
+                    Emp.Name = rdr["Name"].ToString();
+                    Emp.Gender = rdr["Gender"].ToString();
                     //Customer.Country = rdr["Country"].ToString();
-                    Customer.City = rdr["City"].ToString();
-                    lstCustomer.Add(Customer);
+                    Emp.City = rdr["City"].ToString();
+                    lstCustomer.Add(Emp);
                 }
                 con.Close();
             }
             return lstCustomer;
         }
         //To Add new Customer record    
-        public void AddCustomer(Employee Customer)
+        public void AddEmployee(Employee Customer)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("usp_AddCustomer", con);
+                SqlCommand cmd = new SqlCommand("usp_AddEmployee", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Name", Customer.Name);
                 cmd.Parameters.AddWithValue("@Gender", Customer.Gender);
@@ -53,7 +53,7 @@ namespace BlazorEmpwage
             }
         }
         //To Update the records of a particluar Customer  
-        public void UpdateCustomer(Employee Customer)
+        public void UpdateEmployee(Employee Customer)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -71,7 +71,7 @@ namespace BlazorEmpwage
             }
         }
         //Get the details of a particular Customer  
-        public Employee GetCustomerData(int? id)
+        public Employee GetEmployeeData(int? id)
         {
             Employee Customer = new Employee();
 
@@ -97,11 +97,11 @@ namespace BlazorEmpwage
             return Customer;
         }
         //To Delete the record on a particular Customer  
-        public void DeleteCustomer(int? id)
+        public void DeleteEmployee(int? id)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("usp_DeleteCustomer", con);
+                SqlCommand cmd = new SqlCommand("usp_DeleteEmp", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@CustomerId", id);
                 con.Open();
