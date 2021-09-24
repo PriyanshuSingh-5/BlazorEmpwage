@@ -24,11 +24,11 @@ namespace BlazorEmpwage
                 while (rdr.Read())
                 {
                     Employee Emp = new Employee();
-                    Emp.CustomerId = Convert.ToInt32(rdr["CustomerID"]);
+                    Emp.EmployeeId = Convert.ToInt32(rdr["EmployeeID"]);
                     Emp.Name = rdr["Name"].ToString();
                     Emp.Gender = rdr["Gender"].ToString();
                     //Customer.Country = rdr["Country"].ToString();
-                    Emp.City = rdr["City"].ToString();
+                    //Emp.City = rdr["City"].ToString();
                     lstCustomer.Add(Emp);
                 }
                 con.Close();
@@ -45,7 +45,7 @@ namespace BlazorEmpwage
                 cmd.Parameters.AddWithValue("@Name", Customer.Name);
                 cmd.Parameters.AddWithValue("@Gender", Customer.Gender);
                 //cmd.Parameters.AddWithValue("@Country", Customer.Country);
-                cmd.Parameters.AddWithValue("@City", Customer.City);
+                //cmd.Parameters.AddWithValue("@City", Customer.City);
 
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -60,7 +60,7 @@ namespace BlazorEmpwage
                 SqlCommand cmd = new SqlCommand("usp_UpdateCustomer", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@CustomerId", Customer.CustomerId);
+                cmd.Parameters.AddWithValue("@EmployeeId", Customer.EmployeeId);
                 cmd.Parameters.AddWithValue("@Name", Customer.Name);
                 cmd.Parameters.AddWithValue("@Gender", Customer.Gender);
                 //cmd.Parameters.AddWithValue("@Country", Customer.Country);
@@ -81,17 +81,17 @@ namespace BlazorEmpwage
                 SqlCommand cmd = new SqlCommand("usp_GetCustomerByID", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@CustomerId", id);
+                cmd.Parameters.AddWithValue("@EmployeeId", id);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
 
                 while (rdr.Read())
                 {
-                    Customer.CustomerId = Convert.ToInt32(rdr["CustomerID"]);
+                    Customer.EmployeeId = Convert.ToInt32(rdr["EmployeeID"]);
                     Customer.Name = rdr["Name"].ToString();
                     Customer.Gender = rdr["Gender"].ToString();
                     //Customer.Country = rdr["Country"].ToString();
-                    Customer.City = rdr["City"].ToString();
+                    //Customer.City = rdr["City"].ToString();
                 }
             }
             return Customer;
@@ -103,7 +103,7 @@ namespace BlazorEmpwage
             {
                 SqlCommand cmd = new SqlCommand("usp_DeleteEmp", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@CustomerId", id);
+                cmd.Parameters.AddWithValue("@EmployeeId", id);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
