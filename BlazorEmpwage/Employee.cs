@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Xunit.Sdk;
 
 namespace BlazorEmpwage
 {
     public class Employee
     {
-        public int CustomerId { get; set; }
-        [Required]
+        public int EmployeeId { get; set; }
+        [Required(ErrorMessage="Enter Name")]
         public string Name { get; set; }
-        [Required]
-        public string City { get; set; }
-        [Required]
+        //[Required(ErrorMessage=""]
+        // public string City { get; set; }
+        [Required(ErrorMessage = "Gender is missing")]
         public string Gender { get; set; }
-        [Required]
+        [Required(ErrorMessage = "*Department")]
         public string Department { get; set; }
         public int Salary { get; set; }
 

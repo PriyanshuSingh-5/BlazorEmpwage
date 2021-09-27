@@ -18,9 +18,12 @@ namespace BlazorEmpwage
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            ConnectionString = Configuration["ConnectionStrings:EmpWage"];
         }
 
         public IConfiguration Configuration { get; }
+
+        public string ConnectionString { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -29,6 +32,8 @@ namespace BlazorEmpwage
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+
+           // var SQLConnCofig = new SQLConnConfig(Configuration.GetConnectionString("EmpWage"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

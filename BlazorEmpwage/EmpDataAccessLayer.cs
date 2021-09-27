@@ -64,7 +64,7 @@ namespace BlazorEmpwage
                 cmd.Parameters.AddWithValue("@Name", Customer.Name);
                 cmd.Parameters.AddWithValue("@Gender", Customer.Gender);
                 //cmd.Parameters.AddWithValue("@Country", Customer.Country);
-                cmd.Parameters.AddWithValue("@City", Customer.City);
+               // cmd.Parameters.AddWithValue("@City", Customer.City);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
