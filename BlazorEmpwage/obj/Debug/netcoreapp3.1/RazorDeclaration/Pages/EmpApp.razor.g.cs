@@ -75,6 +75,13 @@ using BlazorEmpwage.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Pages\EmpApp.razor"
+using BlazorEmpwage.Data;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/empwage")]
     public partial class EmpApp : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -83,6 +90,17 @@ using BlazorEmpwage.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 183 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Pages\EmpApp.razor"
+ 
+    public Employee Emp = new Employee();
+
+    private void SubmitData()
+    { }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using Xunit.Sdk;
+using System.ComponentModel.DataAnnotations;
 
-namespace BlazorEmpwage
+namespace BlazorEmpwage.Data
 {
     public class Employee
     {
         public int EmployeeId { get; set; }
-        [Required(ErrorMessage="Enter Name")]
+        [Required(ErrorMessage = "Enter Name")]
         public string Name { get; set; }
         //[Required(ErrorMessage=""]
         // public string City { get; set; }

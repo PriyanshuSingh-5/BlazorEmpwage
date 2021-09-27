@@ -1,4 +1,6 @@
 ﻿@page "/empwage"
+
+@using BlazorEmpwage.Data
 @*<h3>EmpApp</h3>*@
 
 <!DOCTYPE html>
@@ -28,12 +30,15 @@
         </div>
     </header>
     <!-- UC2:- Ability to create a Form Header and the Input Text Element for Name -->
+    <EditForm Model="@Emp" OnValidSubmit="@SubmitData">
     <div class="form-content">
+        <DataAnnotationsValidator />
         <form class="form" action="#" onsubmit="save(event)" onreset="resetForm()">
             <div class="form-head">Employee Payroll form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
-                <input class="input" type="text" id="name" name="name" required>
+                <input class="input" type="text" id="name" name="name" @bind-value="@Emp.Name" required>
+                &nbsp; <ValidationMessage For="@(()=>Emp.Name)" />
                 <error-output class="name-error" for="name"></error-output>
             </div>
             <!--UC3:- Ability to specify the Profile Pic in the Form  -->
@@ -64,28 +69,28 @@
                 <div>
                     <input type="radio" id="male" name="gender" value="Male" required>
                     <label class="text" for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="Female" required>
+                    <input type="radio" id="female" name="gender" value="Female" >
                     <label class="text" for="female">Female</label>
                 </div>
             </div>
             <div class="row-content">
                 <label class="label text" for="department">Department</label>
                 <div>
-                    <input class="checkbox" type="checkbox" id="hr" name="department" value="HR">
+                    <input class="checkbox" type="checkbox" id="hr" name="department" value="HR" required>
                     <label class="text" for="hr">HR</label>
-                    <input class="checkbox" type="checkbox" id="sales" name="department" value="Sales">
+                    <input class="checkbox" type="checkbox" id="sales" name="department" value="Sales" >
                     <label class="text" for="sales">Sales</label>
-                    <input class="checkbox" type="checkbox" id="finance" name="department" value="Finance">
+                    <input class="checkbox" type="checkbox" id="finance" name="department" value="Finance" >
                     <label class="text" for="finance">Finance</label>
-                    <input class="checkbox" type="checkbox" id="engineer" name="department" value="Engineer">
+                    <input class="checkbox" type="checkbox" id="engineer" name="department" value="Engineer" >
                     <label class="text" for="engineer">Engineer</label>
-                    <input class="checkbox" type="checkbox" id="others" name="department" value="Others">
+                    <input class="checkbox" type="checkbox" id="others" name="department" value="Others" >
                     <label class="text" for="others">Others</label>
                 </div>
             </div>
             <div class="row-content">
                 <label class="label text" for="salary">Salary</label>
-                <input class="input" type="range" name="salary" id="salary" min="15000" max="100000" step="100" value="40000">
+                <input class="input" type="range" name="salary" id="salary" min="15000" max="100000" step="100" value="40000" >
                 <output class="salary-output text" for="salary">40000</output>
             </div>
             <!-- UC5:- Ability to specify the start date with Day, Month and Year as Select Input Item -->
@@ -157,7 +162,7 @@
             <!-- UC6:- Ability to add Notes as well as cancel, reset and submit button so as to do some action on form entry -->
             <div class="row-content">
                 <label class="label text" for="Notes">Notes</label>
-                <textarea id="notes" name="Notes" class="input1" placeholder="" stye="height:100px"></textarea>
+                <textarea id="notes" name="Notes" class="input1" placeholder="" stye="height:100px" required></textarea>
             </div>
             <div class="button-content">
                 <a href="./EmployeePayrollHome.html" class="resetButton button cancelButton">Cancel</a>
@@ -168,11 +173,16 @@
             </div>
         </form>
     </div>
+    </EditForm>
 
 </body>
 </html>
 
 
-@code {
+@code 
+{
+    public Employee Emp = new Employee();
 
+    private void SubmitData()
+    { }
 }
