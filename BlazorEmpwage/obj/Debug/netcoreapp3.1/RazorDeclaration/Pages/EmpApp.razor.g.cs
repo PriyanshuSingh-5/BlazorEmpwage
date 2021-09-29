@@ -91,18 +91,29 @@ using BlazorEmpwage.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 184 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Pages\EmpApp.razor"
+#line 187 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Pages\EmpApp.razor"
  
-    public Employee Emp = new Employee();
+     Employee Emp = new Employee();
 
     private void SubmitData()
     { }
-    Employee employee = new Employee();
     
+    protected async Task CreateCustomer()
+    {
+        //controller.Create(Emp);
+       // await Http.PostAsync(HttpMethod.Post, "/api/Employee/Create",Emp);
+        navigation.NavigateTo("/empwage");
+    }
+    void Cancel()
+    {
+        navigation.NavigateTo("/empwage");
+    }
+
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navigation { get; set; }
     }
 }
 #pragma warning restore 1591

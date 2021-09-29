@@ -75,6 +75,13 @@ using BlazorEmpwage.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Pages\EmpHome.razor"
+using BlazorEmpwage.Data;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/emphome")]
     public partial class EmpHome : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -83,6 +90,19 @@ using BlazorEmpwage.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 30 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Pages\EmpHome.razor"
+            
+    Employee[] empList;
+    protected  async Task OnInitAsync()
+    {
+       // empList = await Http.GetAsync(HttpMethod.Get, "/api/Employee/Index")
+        
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591
