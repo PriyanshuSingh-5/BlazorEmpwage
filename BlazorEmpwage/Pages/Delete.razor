@@ -1,0 +1,32 @@
+﻿@page "/delete"
+@using BlazorEmpwage.Data
+<h3>Delete</h3>
+<h2>Delete</h2>
+<h3>Are you sure you want to delete employee ?</h3>
+<br />
+<div class="col-md-4">
+    <table class="table">
+        <tr>
+            <td>Name</td>
+            <td>@emp.Name</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>@emp.Gender</td>
+        </tr>
+        <tr>
+            <td>Department</td>
+            <td>@emp.Department</td>
+        </tr>
+        
+    </table>
+    <div class="form-group">
+        <input type="submit" value="Delete" onclick="" class="btn btn-default" />
+        <input type="submit" value="Cancel" onclick="" class="btn" />
+    </div>
+</div>
+@code {
+    Employee emp = new Employee();
+
+
+}
