@@ -83,7 +83,7 @@ using BlazorEmpwage.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Shared\NavMenu.razor"
+#line 44 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

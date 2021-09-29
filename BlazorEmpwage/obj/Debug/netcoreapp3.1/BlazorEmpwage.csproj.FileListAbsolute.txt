@@ -63,3 +63,4 @@ C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcor
 C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\obj\Debug\netcoreapp3.1\Razor\Pages\AddEmp.cshtml.g.cs

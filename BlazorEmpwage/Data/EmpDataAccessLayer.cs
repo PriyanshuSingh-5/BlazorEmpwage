@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using BlazorEmpwage.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlazorEmpwage
+namespace BlazorEmpwage.Data
 {
     public class EmpDataAccessLayer
     {
@@ -65,7 +64,7 @@ namespace BlazorEmpwage
                 cmd.Parameters.AddWithValue("@Name", Customer.Name);
                 cmd.Parameters.AddWithValue("@Gender", Customer.Gender);
                 //cmd.Parameters.AddWithValue("@Country", Customer.Country);
-               // cmd.Parameters.AddWithValue("@City", Customer.City);
+                // cmd.Parameters.AddWithValue("@City", Customer.City);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -112,4 +111,3 @@ namespace BlazorEmpwage
         }
     }
 }
-  

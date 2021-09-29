@@ -32,13 +32,13 @@
     <!-- UC2:- Ability to create a Form Header and the Input Text Element for Name -->
     <EditForm Model="@Emp" OnValidSubmit="@SubmitData">
     <div class="form-content">
-        <DataAnnotationsValidator />
+        
         <form class="form" action="#" onsubmit="save(event)" onreset="resetForm()">
             <div class="form-head">Employee Payroll form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
                 <input class="input" type="text" id="name" name="name" @bind-value="@Emp.Name" required>
-                &nbsp; <ValidationMessage For="@(()=>Emp.Name)" />
+                
                 <error-output class="name-error" for="name"></error-output>
             </div>
             <!--UC3:- Ability to specify the Profile Pic in the Form  -->
@@ -46,7 +46,7 @@
                 <label class="label text" for="profile">Profile image</label>
                 <div class="profile-radio-content">
                     <label>
-                        <input type="radio" id="profile1" name="profile" value="../assets/profile-images/Ellipse -3.png" required>
+                        <input type="radio" id="profile1" name="profile" value="../assets/profile-images/Ellipse -3.png" >
                         <img class="profile" id="image1" src="/assets/Ellipse -1.png">
                     </label>
                     <label>
@@ -65,13 +65,14 @@
             </div>
             <!-- UC4:- Ability to specify the gender as radio button, department as checkbox and Salary as range indicator. -->
             <div class="row-content">
-                <label class="label text" for="gender">Gender</label>
-                <div>
-                    <input type="radio" id="male" name="gender" value="Male" required>
-                    <label class="text" for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="Female" >
-                    <label class="text" for="female">Female</label>
-                </div>
+                <label class="label text" for="gender" @bind-="Emp.Gender">Gender</label>
+               
+                    <div>
+                        <input type="radio" id="male" name="gender"  @bind="Emp.Gender" required>
+                        <label class="text" for="male">Male</label>
+                        <input type="radio" id="female" name="gender"  @bind="Emp.Gender">
+                        <label class="text" for="female">Female</label>
+                    </div>
             </div>
             <div class="row-content">
                 <label class="label text" for="department">Department</label>
@@ -185,4 +186,6 @@
 
     private void SubmitData()
     { }
+    Employee employee = new Employee();
+    
 }

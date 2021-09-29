@@ -5,9 +5,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\Create.razor" />
+    <Content Remove="wwwroot\css\StyleSheet.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
     <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
     <PackageReference Include="xunit.extensibility.execution" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Create.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Create.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Create.razor" />
   </ItemGroup>
 
 </Project>
