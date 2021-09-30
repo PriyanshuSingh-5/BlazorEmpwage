@@ -1,6 +1,9 @@
 ﻿@page "/emphome"
 @using BlazorEmpwage.Data
-
+@inject HttpClient httpClient
+@using BlazorEmpwage.Services 
+@inject EmployeeServicecs employeeServices
+@*@inject IHttpClientFactory ClientFactory*@
 <h3>EmpHome</h3>
 <h1>Employee Data</h1>
 <p>This component demonstrates fetching Employee data from the server.</p>
@@ -9,29 +12,39 @@
 </p>
 
 
-    <table class='table'>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>Department</th>
-                <th>City</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-               
-            
-        </tbody>
-    </table>
+<table class='table'>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
 
 
 @functions {
-    Employee[] empList;
-    protected  async Task OnInitAsync()
+    Employee Emp = new Employee();
+    List<Employee> Employee = new List<Employee>();
+    public async Task OnInitAsync()
     {
-       // empList = await Http.GetAsync(HttpMethod.Get, "/api/Employee/Index")
-        
+        await httpClient.GetAsync("/api/Employee/Index");
+        //httpClient.GetAsync(HttpMethod.Get, "/api/Employee/Index")
+           // var request = new HttpRequestMessage(HttpMethod.Get,
+           // "/api/Employee/Index");
+
+
+
     }
-}  
+    //public async Task<string> GetResponseString()
+    //{
+    //    var request = "/api/Employee/Index";
+    //    var response = await httpClient.GetAsync(request);
+    //    var content = await response.Content.ReadAsStringAsync();
+    //    return content;
+    //}
+}

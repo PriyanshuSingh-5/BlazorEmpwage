@@ -1,11 +1,11 @@
-﻿using System;
+﻿using BlazorEmpwage.Data;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using BlazorEmpwage.Data;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace BlazorEmpwage
+namespace BlazorEmpwage.Services
 {
     public class EmpService
     {

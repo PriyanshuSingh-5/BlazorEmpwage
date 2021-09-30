@@ -2,6 +2,9 @@
 
 @using BlazorEmpwage.Data
 
+@inject EmpService service
+@*@inject HttpClient Http*@
+@inject IHttpClientFactory ClientFactory
 
 @inject NavigationManager navigation
 @*<h3>EmpApp</h3>*@
@@ -80,7 +83,7 @@
                 <div class="row-content">
                     <label class="label text" for="department">Department</label>
                     <div>
-                        <input class="checkbox" type="checkbox" id="hr" name="department" @bind="Emp.Department" required>
+                        <input class="checkbox" type="checkbox" id="hr" name="department" value="HR" required>
                         <label class="text" for="hr">HR</label>
                         <input class="checkbox" type="checkbox" id="sales" name="department" @bind="Emp.Department">
                         <label class="text" for="sales">Sales</label>
@@ -101,7 +104,7 @@
                 <div class="row-content">
                     <label class="label text" for="startDate">Start Date </label>
                     <div>
-                        <select id="day" name="Day" @bind="Emp.StartDate" required>
+                        <select id="day" name="Day"  required>
                             <option value="" selected>Day</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -172,7 +175,7 @@
                     <a href="./EmployeePayrollHome.html" class="resetButton button cancelButton">Cancel</a>
                     <div class="submit-reset">
                         <button type="submit" class="submitButton button" id="submitButton">Submit</button>
-                        <button type="reset" class="resetButton button" onClick="resetForm()">Reset</button>
+                        <button type="reset" class="resetButton button" onClick="">Reset</button>
                     </div>
                 </div>
             </form>
@@ -185,15 +188,19 @@
 
 @code
 {
-     Employee Emp = new Employee();
+    Employee Emp = new Employee();
 
     private void SubmitData()
-    { }
-    
+    {
+        service.Create(Emp);
+        Emp = new Employee();
+    }
+
     protected async Task CreateCustomer()
     {
         //controller.Create(Emp);
-       // await Http.PostAsync(HttpMethod.Post, "/api/Employee/Create",Emp);
+        //await ClientFactory.SendJsonAsync(HttpMethod.Post, "/api/Employee/Create", Emp);
+        // using var response = await HttpClient.PostAsJsonAsync("https://reqres.in/api/articles", postBody);
         navigation.NavigateTo("/empwage");
     }
     void Cancel()

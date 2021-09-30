@@ -68,3 +68,17 @@ C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\obj\Debug\netcor
 C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\obj\Debug\netcoreapp3.1\Razor\Pages\EditEmp.razor.g.cs
 C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Delete.razor.g.cs
 C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\obj\Debug\netcoreapp3.1\Razor\Pages\Delete.razor.g.cs
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\HttpClientService.Blazor.dll
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Http.dll
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Blazor.HttpClient.dll

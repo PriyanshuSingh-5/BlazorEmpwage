@@ -1,4 +1,5 @@
 using BlazorEmpwage.Data;
+using BlazorEmpwage.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -32,6 +33,8 @@ namespace BlazorEmpwage
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton<EmpService>();
+            services.AddHttpClient<IEmployeeServices, EmployeeServicecs>();
 
            // var SQLConnCofig = new SQLConnConfig(Configuration.GetConnectionString("EmpWage"));
         }

@@ -82,6 +82,13 @@ using BlazorEmpwage.Data;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Pages\EmpHome.razor"
+using BlazorEmpwage.Services;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/emphome")]
     public partial class EmpHome : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -93,16 +100,31 @@ using BlazorEmpwage.Data;
 #nullable restore
 #line 30 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Pages\EmpHome.razor"
             
-    Employee[] empList;
-    protected  async Task OnInitAsync()
+    Employee Emp = new Employee();
+    List<Employee> Employee = new List<Employee>();
+    public async Task OnInitAsync()
     {
-       // empList = await Http.GetAsync(HttpMethod.Get, "/api/Employee/Index")
-        
+        await httpClient.GetAsync("/api/Employee/Index");
+        //httpClient.GetAsync(HttpMethod.Get, "/api/Employee/Index")
+           // var request = new HttpRequestMessage(HttpMethod.Get,
+           // "/api/Employee/Index");
+
+
+
     }
+    //public async Task<string> GetResponseString()
+    //{
+    //    var request = "/api/Employee/Index";
+    //    var response = await httpClient.GetAsync(request);
+    //    var content = await response.Content.ReadAsStringAsync();
+    //    return content;
+    //}
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private EmployeeServicecs employeeServices { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient httpClient { get; set; }
     }
 }
 #pragma warning restore 1591
