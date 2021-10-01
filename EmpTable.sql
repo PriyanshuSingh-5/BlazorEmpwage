@@ -10,3 +10,8 @@ Create table Employee(
 	StartDate datetime,
 	Notes varchar(50)
 ) 
+
+
+
+
+select * from Employee;
