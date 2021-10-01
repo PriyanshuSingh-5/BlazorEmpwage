@@ -1,8 +1,8 @@
 ﻿@page "/emphome"
 @using BlazorEmpwage.Data
-@inject HttpClient httpClient
-@using BlazorEmpwage.Services 
-@inject EmployeeServicecs employeeServices
+
+
+@inject EmpService employeeServices
 @*@inject IHttpClientFactory ClientFactory*@
 <h3>EmpHome</h3>
 <h1>Employee Data</h1>
@@ -11,31 +11,54 @@
     <a href="/empwage">Create New</a>
 </p>
 
+@if (Employee == null)
+{
+                <p><em>Loading...</em></p>
+}
+else
+{
 
 <table class='table'>
     <thead>
         <tr>
-            <th>ID</th>
+            
             <th>Name</th>
             <th>Gender</th>
             <th>Department</th>
-            <th>City</th>
+            <th>Notes</th>
         </tr>
     </thead>
     <tbody>
+    
+    @foreach (var emp in Employee)
+    {
+        <tr>
+            
+            <td>@emp.Name</td>
+            <td>@emp.Gender</td>
+            <td>@emp.Department</td>
+            <td>@emp.Notes</td>
+        </tr>
+    }
     </tbody>
 </table>
+}
 
 
 @functions {
-    Employee Emp = new Employee();
-    List<Employee> Employee = new List<Employee>();
+    public Employee Emp = new Employee();
+    public  List<Employee> Employee;
+
+    protected override void OnInitialized()
+    {
+        Employee = employeeServices.GetEmployeesList();
+    }
     public async Task OnInitAsync()
     {
-        await httpClient.GetAsync("/api/Employee/Index");
+        //await httpClient.GetAsync("/api/Employee/Index");
         //httpClient.GetAsync(HttpMethod.Get, "/api/Employee/Index")
-           // var request = new HttpRequestMessage(HttpMethod.Get,
-           // "/api/Employee/Index");
+        // var request = new HttpRequestMessage(HttpMethod.Get,
+        // "/api/Employee/Index");
 
 
 

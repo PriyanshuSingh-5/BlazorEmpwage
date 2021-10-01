@@ -36,7 +36,11 @@ namespace BlazorEmpwage
             services.AddSingleton<EmpService>();
             services.AddHttpClient<IEmployeeServices, EmployeeServicecs>();
 
-           // var SQLConnCofig = new SQLConnConfig(Configuration.GetConnectionString("EmpWage"));
+            
+
+            var SQLConnCofig = new SQLConnConfig(Configuration.GetConnectionString("EmpWage"));
+            services.AddSingleton(SQLConnCofig);
+            services.AddServerSideBlazor(x => x.DetailedErrors = true);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

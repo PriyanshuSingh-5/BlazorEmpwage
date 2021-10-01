@@ -91,14 +91,16 @@ using BlazorEmpwage.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 190 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Pages\EmpApp.razor"
+#line 189 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Pages\EmpApp.razor"
  
+    public bool Checksubmit = false;
     Employee Emp = new Employee();
 
-    private void SubmitData()
+    public void SubmitData()
     {
-        service.Create(Emp);
+        service.SaveEmployee(Emp);
         Emp = new Employee();
+        navigation.NavigateTo("/empwage");
     }
 
     protected async Task CreateCustomer()

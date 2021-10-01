@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlazorEmpwage.Data;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,22 +10,29 @@ namespace BlazorEmpwage
 {
     public class ReuseSQL
     {
-        string connectionString = "Data Source=LAPTOP-NAVJ6800\\SQLEXPRESS;Initial Catalog=Blazor;Integrated Security=True;";
+        public static SQLConnConfig _conn;
+        public SqlConnection connection;
+        private SqlConnection connnection;
 
-        public async Task SaveRecord()
+        public ReuseSQL(SQLConnConfig conn)
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                SqlCommand cmd = new SqlCommand("", con);
-                cmd.ExecuteNonQuery();
-            }
+            _conn = conn;
+            connection = new SqlConnection(_conn.Value);
         }
 
-        public DataTable GetRecord(String SQLStr)
+        public async Task SaveRecord(string SQLStr)
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                SqlCommand cmd = new SqlCommand(SQLStr, con);
+            connection.Open();
+                SqlCommand cmd = new SqlCommand("SQLStr", connection);
+                cmd.ExecuteNonQuery();
+            connection.Close();
+            
+        }
+
+        public DataTable GetRecord(string SQLStr)
+        {
+           
+                SqlCommand cmd = new SqlCommand(SQLStr, connnection);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -32,4 +40,4 @@ namespace BlazorEmpwage
             }
         }
     }
-}
+
