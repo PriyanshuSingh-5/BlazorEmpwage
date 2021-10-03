@@ -115,7 +115,7 @@
                 </div>*@
             <div class="row-content">
                 <label class="label text" for="name">Salary</label>
-                <input class="input" type="text" id="salary" @bind-value="@Emp.Salary" required>
+                <input class="input" type="number" id="salary" @bind-value="@Emp.Salary" required>
 
                 <error-output class="name-error" for="name"></error-output>
             </div>
@@ -193,7 +193,7 @@
             <div class="button-content">
                 <a href="./EmployeePayrollHome.html" class="resetButton button cancelButton">Cancel</a>
                 <div class="submit-reset">
-                    <button type="submit" class="submitButton button" id="submitButton" value="Submit">Submit</button>
+                    <button type="submit" class="submitButton button" id="submitButton" value="Submit" href="/emphome">Submit</button>
                     <button type="reset" class="resetButton button" onClick="">Reset</button>
                 </div>
             </div>

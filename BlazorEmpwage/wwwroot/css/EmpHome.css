@@ -57,6 +57,10 @@ html body {
     box-sizing: border-box;
 }
 
+button {
+    color: white;
+    background-color: forestgreen;
+}
 .table {
     margin-right: 300px;
     /* display: flex;
