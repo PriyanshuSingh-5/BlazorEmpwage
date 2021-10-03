@@ -11,6 +11,8 @@ namespace BlazorEmpwage.Data
         public int EmployeeId { get; set; }
         [Required(ErrorMessage = "Enter Name")]
         public string Name { get; set; }
+
+        public string ProfileImage { get; set; }
         //[Required(ErrorMessage=""]
         // public string City { get; set; }
         [Required(ErrorMessage = "Gender is missing")]

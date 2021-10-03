@@ -5,6 +5,7 @@ using BlazorEmpwage.Data;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Globalization;
 
 namespace BlazorEmpwage
 {
@@ -46,9 +47,23 @@ namespace BlazorEmpwage
 
         public void SaveEmployee(Employee employee)
         {
+            //SqlCommand cmd = new SqlCommand();
             //using (var connection = new SqlConnection(@"Data Source=LAPTOP-NAVJ6800\\SQLEXPRESS;Initial Catalog=Blazor;Integrated Security=True;"))
             //{
-                SqlCommand cmd = new SqlCommand("Insert into Employee values ('" + employee.Name + "','" + employee.Gender + "','" + employee.Department + "','" + employee.Notes + "') ",connection);
+            //DateTime dt = DateTime.Now; // Or whatever
+            //string s = dt.ToString("ddmmyyyy");
+            // string newDateTime = StartDate.ToString("ddMMyyyy", CultureInfo.InvariantCulture);
+            //string StartDate = "";
+            //DateTime parsedDate = DateTime.ParseExact(StartDate,
+            //                                          "yyyyMMdd",
+            //                                          CultureInfo.InvariantCulture);
+            SqlCommand cmd = new SqlCommand("Insert into Employee values ('" + employee.Name + "','" + employee.ProfileImage + "','" + employee.Gender + "','" + employee.Department + "','" + employee.Salary + "','" + employee.StartDate + "','" + employee.Notes + "') ",connection);
+            //string commandLine=@"INSERT INTO Employee(Name,ProfileImage,Gender,Department,Salary,StartDate,Notes) VALUES" +
+             //"(@Name,@ProfileImage,@Gender,@Department,@Salary,@StartDate,@Notes);";
+
+           
+
+            
             connection.Open();
                 cmd.ExecuteNonQuery();
             connection.Close();

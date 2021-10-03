@@ -91,7 +91,7 @@ using BlazorEmpwage.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 189 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Pages\EmpApp.razor"
+#line 207 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Pages\EmpApp.razor"
  
     public bool Checksubmit = false;
     Employee Emp = new Employee();

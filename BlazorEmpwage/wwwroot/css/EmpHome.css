@@ -15,6 +15,7 @@ html body {
     justify-content: center;
     align-items: center;
     border: 0px solid green;
+    margin-right: 300px;
 }
 
 .logo-content {
@@ -23,6 +24,7 @@ html body {
     align-items: center;
     border: 0px solid green;
     width: 80%;
+    //margin-right:300px;
 }
 
 .logo-content-img {
@@ -53,6 +55,17 @@ html body {
     background-color: #f7f7f7;
     padding: 30px 0 10px;
     box-sizing: border-box;
+}
+
+.table {
+    margin-right: 300px;
+    /* display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    width:auto;
+    background-color: #f7f7f7;
+    padding: 30px 0 10px;
+    box-sizing: border-box;*/
 }
 
 .header-content {

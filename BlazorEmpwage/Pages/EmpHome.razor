@@ -4,50 +4,69 @@
 
 @inject EmpService employeeServices
 @*@inject IHttpClientFactory ClientFactory*@
-<h3>EmpHome</h3>
-<h1>Employee Data</h1>
-<p>This component demonstrates fetching Employee data from the server.</p>
+<header class="header-content header">
+    <div class="logo-content">
+        <img src="/assets/logo.png" alt="logo image">
+        <div>
+            <span class="emp-text">EMPLOYEE</span><br>
+            <span class="emp-text emp-payroll">PAYROLL</span>
+        </div>
+    </div>
+</header>
+
+<div style="margin-left: 800px;background-color: white;"><i class="fa fa-search"></i></div>
 <p>
     <a href="/empwage">Create New</a>
 </p>
 
+
 @if (Employee == null)
 {
-                <p><em>Loading...</em></p>
+    <p><em>Loading...</em></p>
 }
 else
 {
 
-<table class='table'>
-    <thead>
-        <tr>
-            
-            <th>Name</th>
-            <th>Gender</th>
-            <th>Department</th>
-            <th>Notes</th>
-        </tr>
-    </thead>
-    <tbody>
+    <table class='table'>
+        <thead>
+            <tr>
+
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Notes</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var emp in Employee)
+            {
+                <tr>
+
+                    <td>@emp.Name</td>
+                    <td>@emp.Gender</td>
+                    <td>@emp.Department</td>
+                    <td>@emp.Salary</td>
+                    <td>@emp.Notes</td>
+                    <td>
+                        @*<a href="/edit">Edit</a>*@
+                        <button type="button" href="/edit">Edit</button>
+                        <button type="button" href="/delete">Delete</button>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
     
-    @foreach (var emp in Employee)
-    {
-        <tr>
-            
-            <td>@emp.Name</td>
-            <td>@emp.Gender</td>
-            <td>@emp.Department</td>
-            <td>@emp.Notes</td>
-        </tr>
-    }
-    </tbody>
-</table>
 }
 
 
 @functions {
     public Employee Emp = new Employee();
-    public  List<Employee> Employee;
+    public List<Employee> Employee;
 
     protected override void OnInitialized()
     {

@@ -91,10 +91,10 @@ using BlazorEmpwage.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 48 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Pages\EmpHome.razor"
+#line 67 "C:\Users\K.R.DHASHNIGA\source\repos\BlazorEmpwage\BlazorEmpwage\Pages\EmpHome.razor"
             
     public Employee Emp = new Employee();
-    public  List<Employee> Employee;
+    public List<Employee> Employee;
 
     protected override void OnInitialized()
     {
